@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "flyio": "^0.6.14"
+  },
+  "name": "hmug",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:destiny001/hm-ug-33.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
