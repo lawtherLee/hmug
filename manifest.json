@@ -50,7 +50,7 @@
 	/* 快应用特有相关 */
 	"mp-weixin": {
 		/* 小程序特有相关 */
-		"appid": "touristappid",
+		"appid": "wxa461d17e33d5366d",
 		"setting": {
 			"urlCheck": false
 		},
