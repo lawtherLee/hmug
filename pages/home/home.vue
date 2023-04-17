@@ -16,26 +16,73 @@
 			<image @click="cateNavigateTo" v-for="item in navs" :key="item.name" :src="item.image_src" mode=""></image>
 		</view>
 
+		<!-- 楼层 -->
+		<view class="floor">
+			<!-- 每一层楼 -->
+			<view class="floor_item" v-for="item in floors" :key="item.floor_title.name">
+				<!-- 每层的标题 -->
+				<image class="title" :src="item.floor_title.image_src" mode=""></image>
+				<!-- 每层楼的图片列表 -->
+				<view class="image_box">
+					<!-- 左边的1张图片 -->
+					<image @click="goGoodsList(item.product_list[0].navigator_url)" class="left"
+						:src="item.product_list[0].image_src"></image>
+					<!-- 右边的4张图片 -->
+					<view class="right">
+						<image v-for="(img,index) in item.product_list.slice(1)" @click="() => goGoodsList(img.navigator_url)"
+							:src="img.image_src" :key="index">
+						</image>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
 	import {
 		getBanners,
+		getFloors,
 		getNavList
 	} from '../../api/home';
 	export default {
 		data() {
 			return {
 				banners: [],
-				navs: []
+				navs: [],
+				floors: []
 			};
 		},
+
 		onLoad() {
 			this.loadBanners()
 			this.loadCateNavs()
+			this.loadFloors()
 		},
+
 		methods: {
+			// 点击进入商品列表
+			goGoodsList(url) {
+				const query = url.split('?')[1]
+				console.log(query);
+				uni.navigateTo({
+					url: "/subGoods/goods-list/goods-list?" + query
+				})
+			},
+			// 加载并保存楼层数据
+			async loadFloors() {
+				const {
+					message
+				} = await getFloors()
+				this.floors = message
+				console.log(this.floors);
+			},
+			// 导航跳转
+			cateNavigateTo() {
+				uni.switchTab({
+					url: '/pages/cate/cate'
+				})
+			},
 			// 轮播详情
 			goGoodsDetail(id) {
 				uni.navigateTo({
@@ -48,7 +95,6 @@
 					message
 				} = await getBanners()
 				this.banners = message
-				console.log(this.banners);
 			},
 			// 获取首页分类导航数据
 			async loadCateNavs() {
@@ -83,6 +129,44 @@
 			image {
 				width: 128rpx;
 				height: 140rpx;
+			}
+		}
+
+		// 楼层
+		.floor {
+			margin-top: 20rpx;
+
+			.floor_item {
+				margin: 15rpx 10rpx;
+
+				.title {
+					height: 60rpx;
+					width: 750rpx;
+				}
+
+				.image_box {
+					display: flex;
+					justify-content: space-between;
+
+					.left {
+						width: 232rpx;
+						height: 392rpx;
+						float: left;
+					}
+
+					.right {
+						width: 500rpx;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-around;
+						align-content: space-between;
+
+						image {
+							width: 233rpx;
+							height: 190rpx;
+						}
+					}
+				}
 			}
 		}
 	}
