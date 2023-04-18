@@ -54,16 +54,14 @@
 		"root": "subGoods",
 		"pages": [{
 			"path": "goods-detail/goods-detail"
-		}    ,{
-                    "path" : "goods-list/goods-list",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+		}, {
+			"path": "goods-list/goods-list",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}]
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
