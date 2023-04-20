@@ -57,16 +57,22 @@
 		}, {
 			"path": "goods-list/goods-list",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "商品列表",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 150
 			}
 
 		}]
 	}],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "商城",
 		"navigationBarBackgroundColor": "#c00000",
-		"backgroundColor": "#fff"
+		"backgroundColor": "#f8f8f8",
+		"usingComponents": {
+			"van-button": "/wxcomponents/weapp/dist/button/index",
+			"van-card": "/wxcomponents/weapp/dist/card/index",
+			"van-divider": "/wxcomponents/weapp/dist/divider/index"
+		}
 	}
 }
