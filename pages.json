@@ -72,7 +72,10 @@
 		"usingComponents": {
 			"van-button": "/wxcomponents/weapp/dist/button/index",
 			"van-card": "/wxcomponents/weapp/dist/card/index",
-			"van-divider": "/wxcomponents/weapp/dist/divider/index"
+			"van-divider": "/wxcomponents/weapp/dist/divider/index",
+			"van-goods-action": "/wxcomponents/weapp/dist/goods-action/index",
+			"van-goods-action-icon": "/wxcomponents/weapp/dist/goods-action-icon/index",
+			"van-goods-action-button": "/wxcomponents/weapp/dist/goods-action-button/index"
 		}
 	}
 }

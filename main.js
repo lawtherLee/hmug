@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import App from './App'
 import * as filters from '@/filters/index.js'
+import store from './store/index.js'
 Vue.config.productionTip = false
 
 Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
@@ -9,6 +10,7 @@ Object.keys(filters).forEach(key => Vue.filter(key, filters[key]))
 App.mpType = 'app'
 
 const app = new Vue({
+	store,
 	...App
 })
 app.$mount()
