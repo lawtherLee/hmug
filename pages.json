@@ -75,7 +75,11 @@
 			"van-divider": "/wxcomponents/weapp/dist/divider/index",
 			"van-goods-action": "/wxcomponents/weapp/dist/goods-action/index",
 			"van-goods-action-icon": "/wxcomponents/weapp/dist/goods-action-icon/index",
-			"van-goods-action-button": "/wxcomponents/weapp/dist/goods-action-button/index"
+			"van-goods-action-button": "/wxcomponents/weapp/dist/goods-action-button/index",
+			"van-checkbox": "/wxcomponents/weapp/dist/checkbox/index",
+			"van-radio": "/wxcomponents/weapp/dist/radio/index",
+			"van-radio-group": "/wxcomponents/weapp/dist/radio-group/index",
+			"van-checkbox-group": "/wxcomponents/weapp/dist/checkbox-group/index"
 		}
 	}
 }

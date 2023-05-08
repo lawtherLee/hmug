@@ -45,7 +45,9 @@
 		getFloors,
 		getNavList
 	} from '../../api/home';
+	import badgeMix from '@/mixins/badge.js'
 	export default {
+		mixins: [badgeMix],
 		data() {
 			return {
 				banners: [],
