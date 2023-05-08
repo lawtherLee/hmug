@@ -35,12 +35,8 @@ export default {
 		// 购物车总数
 		total(state) {
 			return state.list.reduce((sum, item) => {
-				if (item.goods_state) {
-					return sum + item.goods_count
-				} else {
-					return sum
-				}
-			}, 0)
+				return sum + item.goods_count
+			})
 		},
 
 		isAllChecked(state) {
@@ -57,6 +53,15 @@ export default {
 					return sum
 				}
 			}, 0)
-		}
+		},
+		total(state) {
+			return state.list.reduce((sum, item) => {
+				if (item.goods_state) {
+					return sum + item.goods_count
+				} else {
+					return sum
+				}
+			}, 0)
+		},
 	}
 }

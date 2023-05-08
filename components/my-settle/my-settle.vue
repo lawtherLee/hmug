@@ -28,7 +28,7 @@
 			};
 		},
 		computed: {
-			...mapGetters('cart', ['total', 'isAllChecked', 'totalPrice'])
+			...mapGetters('cart', ['isAllChecked', 'totalPrice', 'total'])
 		},
 		methods: {
 			updateState() {
